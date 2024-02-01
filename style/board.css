@@ -399,7 +399,7 @@ h3 {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 61px;
+    font-size: 34px;
     line-height: 120%;
     color: #2A3647;
 }
@@ -409,11 +409,10 @@ h3 {
 }
 
 .taskPopUpDiscription {
-    height: 50px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 35px;
+    font-size: 30px;
     line-height: 120%;
 }
 

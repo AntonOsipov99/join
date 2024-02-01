@@ -30,12 +30,16 @@ function onDragStart(event) {
  */
 async function onDrop(event) {
     event.preventDefault();
-    const targetContainer = event.target.closest('.drop-container');
+    const targetContainer = event.currentTarget.querySelector('.drop-container > :nth-child(2)').id;
     const taskIdWithPrefix = event.dataTransfer.getData('text/plain');
     const taskId = taskIdWithPrefix.split('-')[1];
-    const targetContainerId = targetContainer.id;
+    const targetContainerId = targetContainer;
     const targetArray = getTargetArrayFromContainerId(targetContainerId, tasksToDo, tasksInProgress, tasksAwaitFeedback, tasksDone);
     moveTaskToContainer(taskId, targetArray);
+    const targetContainerElement = document.getElementById(targetContainerId);
+    if (targetContainerElement)
+        targetContainerElement.style.backgroundColor = '';
+        targetContainerElement.style.border = '';
     event.target.classList.remove('drag-over');
 }
 
@@ -90,8 +94,11 @@ function getTargetArrayFromContainerId(containerId, tasksToDo, tasksInProgress, 
  */
 function allowDrop(event) {
     event.preventDefault();
-    if (event.target.classList.contains('drop-container')) {
-        event.target.classList.add('drag-over');
+    const targetContainer = event.target.closest('.drop-container');
+    if (targetContainer) {
+        targetContainer.querySelector('.drop-container > :nth-child(2)').style.backgroundColor = 'lightgray';
+        targetContainer.querySelector('.drop-container > :nth-child(2)').style.border = '2px dotted gray';
+        targetContainer.classList.add('drag-over');
     }
 }
 

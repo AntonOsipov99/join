@@ -507,9 +507,13 @@ function initializeDragAndDrop() {
     dropContainers.forEach(container => {
         container.addEventListener('drop', onDrop);
         container.addEventListener('dragover', allowDrop);
+        container.addEventListener('dragleave', () => {
+            container.querySelector('.drop-container > :nth-child(2)').style.backgroundColor = '';
+            container.querySelector('.drop-container > :nth-child(2)').style.border = ''; 
+            container.classList.remove('drag-over');
+        });
     });
 }
-
 /**
  * Shows tasks by clearing task containers, displaying tasks, and initializing drag and drop.
  */
