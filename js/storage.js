@@ -65,7 +65,7 @@ function getUserName() {
     const urlParams = new URLSearchParams(window.location.search);
     const msg = urlParams.get('msg');
     if (msg) {
-        let userName = msg.split(', ');
+        let userName = msg.split(',');
         return userName[1];
     } else {
         return 'Guest'
