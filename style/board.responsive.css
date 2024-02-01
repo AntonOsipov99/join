@@ -513,6 +513,34 @@
     }
 }
 
+@media (min-width: 2200px) {
+    .table-header {
+        margin-left: 10vw;
+    }
+
+    .table-heading {
+        margin-left: 10vw;
+    }
+
+    .heading {
+        margin-left: 10vw;
+    }
+}
+
+@media (min-width: 3200px) {
+    .table-header {
+        margin-left: 13vw;
+    }
+
+    .table-heading {
+        margin-left: 13vw;
+    }
+
+    .heading {
+        margin-left: 13vw;
+    }
+}
+
 @media (max-width: 450px) {
     h6 {
         font-size: small;

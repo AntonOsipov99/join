@@ -78,7 +78,7 @@ header {
 }
 
 .header-text {
-    margin-left: 95px;
+    margin-left: 5vw;
     font-weight: 500;
     display: flex;
     flex: 1;
@@ -161,4 +161,16 @@ header {
     justify-content: flex-start;
     align-items: center;
 
+}
+
+@media (min-width: 2200px) {
+    .header-text {
+        margin-left: 10vw;
+    }
+}
+
+@media (min-width: 3200px) {
+    .header-text {
+        margin-left: 13vw;
+    }
 }
